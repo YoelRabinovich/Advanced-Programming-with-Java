@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="1100.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TriviaController">
+   <center>
+      <VBox prefHeight="260.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="questionLabel" prefHeight="100.0" prefWidth="1100.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="option0RadioButton" mnemonicParsing="false" prefHeight="100.0" prefWidth="1100.0" style="-fx-background-color: orange;" text="RadioButton">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="option1RadioButton" mnemonicParsing="false" prefHeight="100.0" prefWidth="1100.0" style="-fx-background-color: lightgreen;" text="RadioButton" toggleGroup="$group">
+               <font>
+                  <Font size="24.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="option2RadioButton" mnemonicParsing="false" prefHeight="100.0" prefWidth="1100.0" style="-fx-background-color: lightblue;" text="RadioButton" toggleGroup="$group">
+               <font>
+                  <Font size="24.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="option3RadioButton" mnemonicParsing="false" prefHeight="100.0" prefWidth="1100.0" style="-fx-background-color: purple;" text="RadioButton" toggleGroup="$group">
+               <font>
+                  <Font size="24.0" />
+               </font></RadioButton>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="nextQuestionButton" disable="true" mnemonicParsing="false" onAction="#nextQuestion" prefHeight="110.0" prefWidth="370.0" style="-fx-background-color: gray;" text="next question" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#restartGame" prefHeight="110.0" prefWidth="370.0" style="-fx-background-color: gray;" text="restart" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#finishGame" prefHeight="72.0" prefWidth="370.0" style="-fx-background-color: gray;" text="end game" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <AnchorPane prefHeight="55.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="4.0" prefHeight="54.0" prefWidth="1090.0" text="Think you know it all? Put your trivia skills to the test with our newest game!" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Consolas" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

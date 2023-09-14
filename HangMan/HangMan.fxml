@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="636.0" prefWidth="1006.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HangManController">
+	<center>
+		<AnchorPane prefHeight="500.0" prefWidth="826.0">
+			<Canvas fx:id="cnv" height="470.0" layoutX="84.0" layoutY="15.0" width="610.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="168.0" AnchorPane.topAnchor="15.0" />
+		</AnchorPane>
+	</center>
+	<bottom>
+		<VBox prefHeight="39.0" prefWidth="800.0">
+			<HBox prefHeight="62.0" prefWidth="1027.0" spacing="50.0">
+            <Label prefHeight="62.0" prefWidth="175.0" text="THE WORD:">
+               <font>
+                  <Font name="Ink Free" size="30.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.512592613697052" green="0.3037036955356598" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+				<Label fx:id="labelWordStatus" lineSpacing="5.0" prefHeight="61.0" prefWidth="626.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Verdana" size="34.0" />
+               </font></Label>
+				<Button onAction="#restartGame" prefHeight="46.0" prefWidth="143.0" text="restart" textOverrun="WORD_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="Ink Free" size="30.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5984795093536377" green="0.24654971063137054" blue="0.7157894968986511" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.5894736647605896" blue="0.6315789222717285" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill></Button>
+			</HBox>
+		</VBox>
+	</bottom>
+   <right>
+      <AnchorPane prefHeight="500.0" prefWidth="182.0" BorderPane.alignment="CENTER">
+         <children>
+      			<HBox fx:id="hboxUsedLetters" layoutY="48.0" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: white;" />
+            <Label prefHeight="48.0" prefWidth="178.0" text="Used Letters" underline="true">
+               <font>
+                  <Font name="Ink Free" size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5084860324859619" green="0.11493177711963654" blue="0.7052631378173828" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="14.0" layoutY="268.0" text="Lives Left:">
+               <font>
+                  <Font name="Ink Free" size="23.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3684210479259491" green="0.17875243723392487" blue="0.2166861593723297" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="LivesLeft" layoutX="130.0" layoutY="260.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3676413297653198" green="0.2959064245223999" blue="0.7263157963752747" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+   <top>
+      <AnchorPane prefHeight="96.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+         <children>
+      		<HBox fx:id="hboxLetters" layoutX="232.0" prefHeight="96.0" prefWidth="795.0" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="85.0" prefWidth="226.0" text="HangMan">
+               <font>
+                  <Font name="Ink Free" size="53.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5984795093536377" green="0.24654971063137054" blue="0.7157894968986511" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.18538011610507965" green="0.1520467847585678" blue="0.2631579041481018" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
